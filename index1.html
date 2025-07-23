@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Akhila's Resume Builder App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f5f7;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #6A1B9A;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .form-box, .resume-box {
+      flex: 1;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .resume-box {
+      background: #fdfbff;
+    }
+
+    .resume-box h2 {
+      color: #4A148C;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .highlight {
+      color: #2E7D32;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💼 Akhila's Resume Builder App</h1>
+
+  <div class="container">
+    <div class="form-box">
+      <label>Full Name:</label>
+      <input type="text" id="name" placeholder="e.g., Akhila S.">
+
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="e.g., akhila@gmail.com">
+
+      <label>Phone:</label>
+      <input type="text" id="phone" placeholder="e.g., 9876543210">
+
+      <label>Education:</label>
+      <textarea id="education" rows="3" placeholder="e.g., B.Tech in CSE from XYZ University (2021 - 2025)"></textarea>
+
+      <label>Skills:</label>
+      <textarea id="skills" rows="3" placeholder="e.g., HTML, CSS, JavaScript, Python"></textarea>
+
+      <label>Projects:</label>
+      <textarea id="projects" rows="3" placeholder="e.g., Resume Builder App, Typing Speed Tester"></textarea>
+
+      <button onclick="generateResume()">Generate Resume</button>
+    </div>
+
+    <div class="resume-box" id="resumeOutput">
+      <h2 id="displayName">Your Name</h2>
+      <p><span class="highlight">Email:</span> <span id="displayEmail"></span></p>
+      <p><span class="highlight">Phone:</span> <span id="displayPhone"></span></p>
+
+      <div class="section">
+        <h3>🎓 Education</h3>
+        <p id="displayEducation"></p>
+      </div>
+
+      <div class="section">
+        <h3>🛠 Skills</h3>
+        <p id="displaySkills"></p>
+      </div>
+
+      <div class="section">
+        <h3>📁 Projects</h3>
+        <p id="displayProjects"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generateResume() {
+      document.getElementById("displayName").innerText = document.getElementById("name").value;
+      document.getElementById("displayEmail").innerText = document.getElementById("email").value;
+      document.getElementById("displayPhone").innerText = document.getElementById("phone").value;
+      document.getElementById("displayEducation").innerText = document.getElementById("education").value;
+      document.getElementById("displaySkills").innerText = document.getElementById("skills").value;
+      document.getElementById("displayProjects").innerText = document.getElementById("projects").value;
+    }
+  </script>
+
+</body>
+</html>
